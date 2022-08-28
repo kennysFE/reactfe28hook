@@ -9,19 +9,33 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UseStateDemo from './pages/HookDemo/UseStateDemo/UseStateDemo';
 import UseEffectDemo from './pages/HookDemo/UseEffectDemo/UseEffectDemo';
 import UseCallBackDemo from './pages/HookDemo/UseCallBackDemo/UseCallBackDemo';
+import UseMemoDemo from './pages/HookDemo/UseMemoDemo/UseMemoDemo';
+import UseRefDemo from './pages/HookDemo/UseRefDemo/UseRefDemo';
+// setup redux
+import {Provider} from 'react-redux';
+import { store } from './redux/configStore';
+import DemoNumber from './pages/HookDemo/UseRedux/DemoNumber';
+import DemoFaceBookApp from './pages/HookDemo/UseRedux/DemoFaceBook/DemoFaceBookApp';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
     <Routes>
       <Route path='' element={<App />}>
         <Route path='usestate' element={<UseStateDemo />}></Route>
         <Route path='useeffect' element={<UseEffectDemo />}></Route>
         <Route path='usecallback' element={<UseCallBackDemo />}></Route>
+        <Route path='usememodemo' element={<UseMemoDemo />}></Route>
+        <Route path='userefdemo' element={<UseRefDemo />}></Route>
+        <Route path='useredux' element={<DemoNumber />}></Route>
+        <Route path='usedemofacebook' element={<DemoFaceBookApp />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>
+  </Provider>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

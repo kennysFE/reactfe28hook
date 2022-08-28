@@ -6,7 +6,7 @@ export default function DemoChonXe() {
         setcolor(`./img/products/${color}-car.jpg`)
     }
   return (
-    <div>
+    <div >
         <h3>Demo Chon Xe</h3>
         <div className='row'>
             <div className='col-6'>

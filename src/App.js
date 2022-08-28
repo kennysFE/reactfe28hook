@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       < HeaderHome />
-      < DemoChonXe />
+      < DemoChonXe  />
       < Outlet />
       
     </div>
